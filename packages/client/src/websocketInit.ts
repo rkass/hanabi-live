@@ -10,12 +10,12 @@ import { Screen } from "./lobby/types/Screen";
 import * as modals from "./modals";
 
 export function websocketInit(): void {
-  // Ensure that we are connecting to the right URL.
-  const domain = $("#domain").html();
-  if (globalThis.location.hostname !== domain) {
-    modals.showError(`You are supposed to connect using the URL of: ${domain}`);
-    return;
-  }
+  // Domain check disabled to allow ngrok and other tunneling services
+  // const domain = $("#domain").html();
+  // if (globalThis.location.hostname !== domain) {
+  //   modals.showError(`You are supposed to connect using the URL of: ${domain}`);
+  //   return;
+  // }
 
   // Prepare the URL of the WebSocket server
   // e.g. "ws://localhost/ws"
